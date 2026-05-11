@@ -21,9 +21,9 @@ def openPickleGraph(filename):
 
 tab1, tab2, tab3, tab4, tab5, tab6, tab7 = st.tabs(["Overview", "Data", "Price Comparison over time", "Comparison by Country", "Comparison Each Year", "Variable Comparison per Year", "Scatter Plot"])
 
-data = pd.read_csv('https://github.com/alexanderfewtrell/Data315_Project2/raw/refs/heads/main/completed_data.csv')
-UKMap = gpd.read_file("https://github.com/alexanderfewtrell/Data315_Project2/raw/refs/heads/main/CTRY_DEC_2021_UK_BUC.shp")
-USMap = gpd.read_file("https://github.com/alexanderfewtrell/Data350/raw/refs/heads/main/tl_2025_us_state/tl_2025_us_state.dbf")
+data = pd.read_csv('https://github.com/alexanderfewtrell/Project2_Dashboard_Git/raw/refs/heads/main/completed_data.csv')
+UKMap = gpd.read_file("https://github.com/alexanderfewtrell/Project2_Dashboard_Git/raw/refs/heads/main/CTRY_DEC_2021_UK_BUC.shp")
+USMap = gpd.read_file("https://github.com/alexanderfewtrell/Project2_Dashboard_Git/heads/main/tl_2025_us_state/tl_2025_us_state.dbf")
 MainlandUSMap = USMap.drop(USMap[(USMap['NAME'] == "Alaska") | (USMap['NAME'] == "Hawaii")| (USMap['NAME'] == "United States Virgin Islands") | (USMap['NAME'] == "American Samoa") | (USMap['NAME'] == "Commonwealth of the Northern Mariana Islands") | (USMap['NAME'] == "Guam") | (USMap['NAME'] == "Puerto Rico")].index)
 UKMap = UKMap.set_crs("EPSG:27700")
 UKMap = UKMap.to_crs(USMap.crs)
@@ -46,10 +46,11 @@ with tab1:
     # 
     ##### Sources
     ''')
-    st.write("All Data on Github - https://github.com/alexanderfewtrell/Data315_Project2")
+    st.write("All Data on Github - https://github.com/alexanderfewtrell/Project2_Dashboard_Git")
     st.write("UK Fuel - https://www.gov.uk/government/statistics/weekly-road-fuel-prices")
     st.write("US Diesel - https://www.macrotrends.net/4394/us-diesel-fuel-prices")
     st.write("US Petrol - https://www.macrotrends.net/3591/us-gasoline-prices")
+    st.write("Colab Notebook used for some data cleaning - https://colab.research.google.com/drive/1wNuH1XUeLbGZ39PC23DSsR8f-51Wbqu4?usp=sharing")
 
 with tab2:
 
