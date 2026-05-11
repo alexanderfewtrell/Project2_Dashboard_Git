@@ -71,16 +71,19 @@ with tab2:
     AgGrid(data, gridOptions=grid_options, height=300)
 
 with tab3:
+
     st.header("Variable Comparison over time")
 
     dropdown_choice1 = st.selectbox("Select a Variable",
                                     price_options,
-                                    key = "dropdown_choice1")
+                                    key = "dropdown_choice1",
+                                    index = 0)
     st.markdown(f"You selected {dropdown_choice1}")
 
     dropdown_choice2 = st.selectbox("Select a Variable",
                                     price_options,
-                                    key = "dropdown_choice2")
+                                    key = "dropdown_choice2",
+                                    index = 6)
 
     st.markdown(f"You selected {dropdown_choice2}")
 
@@ -174,7 +177,7 @@ with tab5:
 
     # Set default value for second variable
     if "dropdown_choice2Year" not in st.session_state:
-        st.session_state.dropdown_choice2Year = price_options[1]
+        st.session_state.dropdown_choice2Year = price_options[6]
 
     with st.form("comparison_form"):
         new_dropdown_choice1Year = st.selectbox(
