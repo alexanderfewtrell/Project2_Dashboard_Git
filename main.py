@@ -57,6 +57,7 @@ with tab2:
 
     st.markdown('''
     ###### This is the data I will be working with.  It contains fuel prices in the UK and US since 2003.  i will be using this data to explore how fuel prices have changed over time, and how they differ between the two countries.
+    ###### This data is intresting because fuel prices effect everyone. They can have a big impact on the economy, and can also be a good indicator of economic trends.  By using our own knowledge of historical events we can see the changes in prices and try to predict the causes. This is very visable in some instances which can be seen in the graphs.
     ###### It is displayed in both £/Litre as well as $/Gallon
     ###### I used £1 = $1.35 as a conversion rate
     ''')
