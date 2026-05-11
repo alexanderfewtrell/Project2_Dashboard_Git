@@ -23,7 +23,8 @@ tab1, tab2, tab3, tab4, tab5, tab6, tab7 = st.tabs(["Overview", "Data", "Price C
 
 data = pd.read_csv('https://github.com/alexanderfewtrell/Project2_Dashboard_Git/raw/refs/heads/master/completed_data.csv')
 UKMap = gpd.read_file("https://github.com/alexanderfewtrell/Project2_Dashboard_Git/raw/refs/heads/master/CTRY_DEC_2021_UK_BUC.shp")
-USMap = gpd.read_file("https://github.com/alexanderfewtrell/Project2_Dashboard_Git/heads/master/tl_2025_us_state/tl_2025_us_state.dbf")
+#USMap = gpd.read_file("https://github.com/alexanderfewtrell/Project2_Dashboard_Git/heads/master/tl_2025_us_state.dbf")
+USMap = gpd.read_file("https://github.com/alexanderfewtrell/Project2_Dashboard_Git/raw/refs/heads/master/tl_2025_us_state/tl_2025_us_state.dbf")
 MainlandUSMap = USMap.drop(USMap[(USMap['NAME'] == "Alaska") | (USMap['NAME'] == "Hawaii")| (USMap['NAME'] == "United States Virgin Islands") | (USMap['NAME'] == "American Samoa") | (USMap['NAME'] == "Commonwealth of the Northern Mariana Islands") | (USMap['NAME'] == "Guam") | (USMap['NAME'] == "Puerto Rico")].index)
 UKMap = UKMap.set_crs("EPSG:27700")
 UKMap = UKMap.to_crs(USMap.crs)
