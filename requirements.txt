@@ -2,6 +2,6 @@ streamlit
 pandas
 matplotlib
 geopandas
-st_aggrid
+streamlit-aggrid
 numpy
 pickle
